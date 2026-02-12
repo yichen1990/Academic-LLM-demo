@@ -464,13 +464,13 @@ Case_3/
 <img src="Output_example/Case_4/Case 4 terminal output.png" width="700">
 <br>
 
-[Generated assessment brrief in PDF](Output_example/Case_4/assessment_brrief.pdf)
+[Generated assessment brrief in PDF](Output_example/Case_4/assessment_brief.pdf)
 <br>
 
-[Generated assessment rubric in PDF](Output_example/Case_/rubric.json)
+[Generated assessment rubric in PDF](Output_example/Case_4/rubric.pdf)
 
 
-[Generated assessment submission checklist in PDF](Output_example/Case_4/submission_checklist.json)
+[Generated assessment submission checklist in PDF](Output_example/Case_4/submission_checklist.pdf)
 
 
 </details>
