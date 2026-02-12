@@ -83,66 +83,66 @@ This framework is designed around four core architectural principles:
 
 ---
 
-### 3.2. Adaptive Orchestration (Intent-Aware Routing)
+- **Adaptive Orchestration (Intent-Aware Routing)**
 
-Each query is classified into a request type:
+  Each query is classified into a request type:
 
-- `GENERIC_QA`
-- `ASSESSMENT_GEN`
+  - `GENERIC_QA`
+  - `ASSESSMENT_GEN`
 
-This routing determines:
+  This routing determines:
 
-- The system prompt template
-- Whether capstone constraints are injected
-- Output structure requirements
-- Post-processing pipeline behavior
+  - The system prompt template
+  - Whether capstone constraints are injected
+  - Output structure requirements
+  - Post-processing pipeline behavior
 
-The same base model therefore operates under different controlled roles (informational assistant vs. academic designer), without mixing behaviors.
-
----
-
-### 3.3. Explicit Risk Scoring and Deterministic Enforcement
-
-Before generation, each query undergoes structured security triage.
-
-The model outputs:
-
-- `action` → ALLOW / ALLOW_WITH_GUARDRAILS / BLOCK  
-- `risk_score` (0–100)  
-- threat evidence and recommended controls  
-
-Risk calibration follows a defined rubric:
-
-- 0–25 → benign informational  
-- 35–70 → borderline misuse  
-- 80–100 → prompt injection, data exfiltration, or private data request  
-
-Enforcement is deterministic:
-- BLOCK skips generation
-- GUARDED constrains output
-- ALLOW proceeds normally
-
-Guardrails do not rely solely on alignment.
+  The same base model therefore operates under different controlled roles (informational assistant vs. academic designer), without mixing behaviors.
 
 ---
 
-### 3.4. Measurable Governance
+- **Explicit Risk Scoring and Deterministic Enforcement**
 
-All decisions and artifacts are logged:
+  Before generation, each query undergoes structured security triage.
 
-- `intent.json`
-- `triage.json`
-- `retrieval.json`
-- generated outputs (MD/PDF)
+  The model outputs:
 
-This enables computation of:
+  - `action` → ALLOW / ALLOW_WITH_GUARDRAILS / BLOCK  
+  - `risk_score` (0–100)  
+  - threat evidence and recommended controls  
 
-- Attack success rate  
-- False block rate  
-- JSON validity rate  
-- Retrieval confidence correlation  
+  Risk calibration follows a defined rubric:
 
-The system is therefore auditable, reproducible, and evaluation-ready.
+  - 0–25 → benign informational  
+  - 35–70 → borderline misuse  
+  - 80–100 → prompt injection, data exfiltration, or private data request  
+
+  Enforcement is deterministic:
+  - BLOCK skips generation
+  - GUARDED constrains output
+  - ALLOW proceeds normally
+
+  Guardrails do not rely solely on alignment.
+
+---
+
+- **Measurable Governance**
+
+  All decisions and artifacts are logged:
+
+  - `intent.json`
+  - `triage.json`
+  - `retrieval.json`
+  - generated outputs (MD/PDF)
+
+  This enables computation of:
+
+  - Attack success rate  
+  - False block rate  
+  - JSON validity rate  
+  - Retrieval confidence correlation  
+
+  The system is therefore auditable, reproducible, and evaluation-ready.
 
 
 ---
